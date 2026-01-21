@@ -1,0 +1,516 @@
+/**
+ * Settings Page Styles
+ * 
+ * Full-page settings with organized sections
+ * Consistent with popup design language
+ */
+
+/* ============================================================================
+   CSS VARIABLES & BASE STYLES
+   ============================================================================ */
+
+:root {
+    /* Color Palette */
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --bg-card: #0f3460;
+    --bg-hover: #1f4068;
+    --bg-input: #0a1628;
+
+    --text-primary: #eaeaea;
+    --text-secondary: #a0a0a0;
+    --text-muted: #6b7280;
+
+    --accent-primary: #e94560;
+    --accent-secondary: #00d9ff;
+    --accent-success: #10b981;
+    --accent-warning: #f59e0b;
+    --accent-danger: #ef4444;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+}
+
+/* ============================================================================
+   CONTAINER
+   ============================================================================ */
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl);
+}
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+
+.header {
+    text-align: center;
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--spacing-xl);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================================================
+   SETTINGS FORM
+   ============================================================================ */
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+/* ============================================================================
+   SETTING GROUP
+   ============================================================================ */
+
+.setting-group {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+}
+
+.group-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.group-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ============================================================================
+   RADIO OPTIONS
+   ============================================================================ */
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.radio-option {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.radio-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 217, 255, 0.3);
+}
+
+.radio-option input[type="radio"] {
+    margin-top: 4px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-secondary);
+}
+
+.radio-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.radio-label strong {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.radio-label small {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* ============================================================================
+   CUSTOM INPUT GROUP
+   ============================================================================ */
+
+.custom-input-group {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-md);
+}
+
+.custom-input-group.hidden {
+    display: none;
+}
+
+.custom-input-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.custom-input-group input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-input);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: border-color var(--transition-fast);
+}
+
+.custom-input-group input:focus {
+    outline: none;
+    border-color: var(--accent-secondary);
+}
+
+.custom-input-group input::placeholder {
+    color: var(--text-muted);
+}
+
+/* ============================================================================
+   RANGE SLIDER
+   ============================================================================ */
+
+.range-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.range-group input[type="range"] {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.range-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--accent-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.range-group input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+.range-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--accent-secondary);
+    border-radius: var(--radius-md);
+    color: var(--bg-primary);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* ============================================================================
+   CHECKBOX OPTION
+   ============================================================================ */
+
+.checkbox-option {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.checkbox-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.checkbox-option input[type="checkbox"] {
+    margin-top: 4px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-success);
+}
+
+.checkbox-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.checkbox-label strong {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.checkbox-label small {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* ============================================================================
+   ACTION BUTTONS
+   ============================================================================ */
+
+.action-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 1px solid;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.action-btn.danger {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: var(--accent-danger);
+    color: var(--accent-danger);
+}
+
+.action-btn.danger:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+/* ============================================================================
+   FORM ACTIONS
+   ============================================================================ */
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding-top: var(--spacing-lg);
+}
+
+.save-btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, #c73e54 100%);
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+}
+
+.save-btn:active {
+    transform: translateY(0);
+}
+
+.save-status {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.save-status.success {
+    color: var(--accent-success);
+}
+
+.save-status.error {
+    color: var(--accent-danger);
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 640px) {
+    .container {
+        padding: var(--spacing-lg);
+    }
+
+    .title {
+        font-size: 24px;
+    }
+}
+
+/* ============================================================================
+   CUSTOM MODAL
+   ============================================================================ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-container {
+    background: linear-gradient(145deg, #1e2a4a 0%, #16213e 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(233, 69, 96, 0.1);
+    animation: slideIn 0.25s ease;
+}
+
+.modal-icon {
+    font-size: 56px;
+    margin-bottom: var(--spacing-lg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.modal-message {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xl);
+}
+
+.modal-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+}
+
+.modal-btn.cancel {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.modal-btn.cancel:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.modal-btn.confirm {
+    background: linear-gradient(135deg, var(--accent-danger) 0%, #dc2626 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.modal-btn.confirm:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
+.modal-btn.confirm:active {
+    transform: translateY(0);
+}

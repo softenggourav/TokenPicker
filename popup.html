@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Token Extractor</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">🔐 Token Extractor</h1>
+      <button id="settingsBtn" class="icon-btn" title="Settings">
+        ⚙️
+      </button>
+    </header>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span id="statusText">Monitoring active tab...</span>
+      <button id="scanBtn" class="scan-btn" title="Scan for tokens">
+        🔍 Scan
+      </button>
+    </div>
+
+    <!-- Token List -->
+    <div id="tokenList" class="token-list">
+      <div class="empty-state">
+        <p>No tokens detected yet.</p>
+        <p class="hint">Make API calls on the active tab to detect tokens.</p>
+      </div>
+    </div>
+
+    <!-- Footer Actions -->
+    <footer class="footer">
+      <button id="clearBtn" class="clear-btn">
+        🗑️ Clear All
+      </button>
+      <span id="tokenCount" class="token-count">0 / 5 tokens</span>
+    </footer>
+  </div>
+
+  <!-- Custom Confirmation Modal -->
+  <div id="confirmModal" class="modal-overlay hidden">
+    <div class="modal-container">
+      <div class="modal-icon">⚠️</div>
+      <h3 class="modal-title">Clear All Tokens?</h3>
+      <p class="modal-message">This will remove all detected tokens. This action cannot be undone.</p>
+      <div class="modal-actions">
+        <button id="modalCancel" class="modal-btn cancel">Cancel</button>
+        <button id="modalConfirm" class="modal-btn confirm">Clear All</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
