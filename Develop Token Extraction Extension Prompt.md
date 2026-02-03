@@ -25,6 +25,7 @@ Allow manual copying of a token via user interaction
 The extension must work without opening browser DevTools.
 
 2. Token Detection Rules
+
 2.1 Token Type (Configurable)
 
 Support configurable token types:
@@ -170,7 +171,7 @@ Production-ready
 
 I'll create a complete Chrome browser extension for extracting and copying API authentication tokens. Let me start by setting up the project structure and implementing all the required functionality.
 
-*Listed directory [Extension](file:///home/softenggourav/Personal/Projects/Extension) *
+*Listed directory [Extension](file:///home/Personal/Projects/Extension) *
 
 ### Planner Response
 
@@ -287,7 +288,7 @@ Extension/
 1. Open **Chrome** → Navigate to `chrome://extensions/`
 2. Enable **Developer mode** (top-right toggle)
 3. Click **Load unpacked**
-4. Select `/home/softenggourav/Personal/Projects/Extension`
+4. Select `/home/Personal/Projects/Extension`
 5. Click the extension icon to start using it!
 
 ---
@@ -315,11 +316,11 @@ I'll replace the native browser `confirm()` dialog with a custom styled modal th
 
 Now let me add the modal styles to both CSS files:
 
-*Viewed [popup.css](file:///home/softenggourav/Personal/Projects/Extension/styles/popup.css) *
+*Viewed [popup.css](file:///home/Personal/Projects/Extension/styles/popup.css) *
 
 *Edited relevant file*
 
-*Viewed [settings.css](file:///home/softenggourav/Personal/Projects/Extension/styles/settings.css) *
+*Viewed [settings.css](file:///home/Personal/Projects/Extension/styles/settings.css) *
 
 *Edited relevant file*
 
@@ -327,7 +328,7 @@ Now let me add the modal styles to both CSS files:
 
 Now let me update the JavaScript files to use the custom modal instead of the native `confirm()`:
 
-*Viewed [popup.js](file:///home/softenggourav/Personal/Projects/Extension/popup.js) *
+*Viewed [popup.js](file:///home/Personal/Projects/Extension/popup.js) *
 
 *Edited relevant file*
 
@@ -335,7 +336,7 @@ Now let me update the JavaScript files to use the custom modal instead of the na
 
 Now let me update the settings.js file similarly:
 
-*Viewed [settings.js](file:///home/softenggourav/Personal/Projects/Extension/settings.js) *
+*Viewed [settings.js](file:///home/Personal/Projects/Extension/settings.js) *
 
 *Edited relevant file*
 
@@ -361,12 +362,12 @@ I've updated both the popup and settings pages to use a custom styled modal inst
 ### Files Updated
 | File | Change |
 |------|--------|
-| [popup.html](cci:7://file:///home/softenggourav/Personal/Projects/Extension/popup.html:0:0-0:0) | Added modal HTML |
-| [settings.html](cci:7://file:///home/softenggourav/Personal/Projects/Extension/settings.html:0:0-0:0) | Added modal HTML |
-| [popup.js](cci:7://file:///home/softenggourav/Personal/Projects/Extension/popup.js:0:0-0:0) | Replaced `confirm()` with custom modal handlers |
-| [settings.js](cci:7://file:///home/softenggourav/Personal/Projects/Extension/settings.js:0:0-0:0) | Replaced `confirm()` with custom modal handlers |
-| [styles/popup.css](cci:7://file:///home/softenggourav/Personal/Projects/Extension/styles/popup.css:0:0-0:0) | Added modal CSS with animations |
-| [styles/settings.css](cci:7://file:///home/softenggourav/Personal/Projects/Extension/styles/settings.css:0:0-0:0) | Added modal CSS with animations |
+| [popup.html](cci:7://file:///home/Personal/Projects/Extension/popup.html:0:0-0:0) | Added modal HTML |
+| [settings.html](cci:7://file:///home/Personal/Projects/Extension/settings.html:0:0-0:0) | Added modal HTML |
+| [popup.js](cci:7://file:///home/Personal/Projects/Extension/popup.js:0:0-0:0) | Replaced `confirm()` with custom modal handlers |
+| [settings.js](cci:7://file:///home/Personal/Projects/Extension/settings.js:0:0-0:0) | Replaced `confirm()` with custom modal handlers |
+| [styles/popup.css](cci:7://file:///home/Personal/Projects/Extension/styles/popup.css:0:0-0:0) | Added modal CSS with animations |
+| [styles/settings.css](cci:7://file:///home/Personal/Projects/Extension/styles/settings.css:0:0-0:0) | Added modal CSS with animations |
 
 **Reload the extension** in `chrome://extensions/` (click the refresh icon) to see the new confirmation modal when clicking "Clear All"!
 
@@ -378,11 +379,11 @@ I have just changed the parent directory name and rest of the changes are as it 
 
 Got it! You mentioned you renamed the parent directory. Let me check what the new directory name is:
 
-*Listed directory [TokenPicker](file:///home/softenggourav/Personal/Projects/TokenPicker) *
+*Listed directory [TokenPicker](file:///home/Personal/Projects/TokenPicker) *
 
 ### Planner Response
 
-I can see the extension files are now in `/home/softenggourav/Personal/Projects/TokenPicker`. All the files are intact with the same structure:
+I can see the extension files are now in `/home/Personal/Projects/TokenPicker`. All the files are intact with the same structure:
 
 ```
 TokenPicker/
